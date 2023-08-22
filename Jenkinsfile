@@ -5,7 +5,7 @@ pipeline {
             steps {
                 git(
                     url: "https://github.com/dorra-ferah/TerraformExample.git",
-                    branch: "main",
+                    branch: "master",
                     changelog: false,
                     poll: false
                 )
