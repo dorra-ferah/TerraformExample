@@ -28,7 +28,7 @@ data "vsphere_virtual_machine" "template" {
 }
 
 resource "vsphere_virtual_machine" "terraform" {
-  name             = "dorraa"
+  name             = "dorra"
   resource_pool_id = data.vsphere_compute_cluster.cluster.resource_pool_id
   folder = "Dorra Ferah"
   datastore_id     = data.vsphere_datastore.datastore.id
