@@ -4,7 +4,7 @@ pipeline {
         stage("Clone Git Repository") {
             steps {
                 git(
-                    url: "https://github.com/dorra-ferah/TerraformExemple.git",
+                    url: "https://github.com/dorra-ferah/TerraformExample.git",
                     branch: "main",
                     changelog: false,
                     poll: false
