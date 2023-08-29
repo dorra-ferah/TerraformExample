@@ -12,7 +12,7 @@ pipeline {
             }
         }
         
-         stage("terraform2") {
+         stage("terraform") {
             steps {
             //sh "rm -f terraform.tfstate terraform.tfstate.backup"
                 sh "terraform init"
