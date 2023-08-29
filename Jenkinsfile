@@ -5,19 +5,18 @@ pipeline {
             steps {
                 git(
                     url: "https://github.com/dorra-ferah/TerraformExample.git",
-                    branch: "master",
+                    branch: "ansible",
                     changelog: false,
                     poll: false
                 )
             }
         }
         
-         stage("terraform") {
+         stage("ansible") {
             steps {
-            //sh "rm -f terraform.tfstate terraform.tfstate.backup"
-                sh "terraform init"
-                sh "terraform plan"
-                sh "terraform apply -auto-approve"
+                sh "ansible all -m ping -v"
+                sh "ansible-playbook playbook.yaml --extra-vars ansible_sudo_pass=123456"
+                
                 sh"git add ."
                 sh "git commit -m 'Add testfile from Jenkins Pipeline'"
             }
